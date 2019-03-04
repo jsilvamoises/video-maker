@@ -8,6 +8,7 @@ git remote add origin https://github.com/jsilvamoises/video-maker
 git push origin user-input
 @author: Usuario
 """
+from model.content import Content,Sentences
 prefixes = {"0":"Who is","1":"What is","2":"The history of"}
 
 selectedSentence =  ""
@@ -27,7 +28,8 @@ def menu():
         selectedSentence = prefixes[selectedSentence]
         query = selectedSentence+" "+query
         print("Opção escolhida.: ",query)
-    
+        content = Content(query, selectedSentence)
+        print(content.toString())
 menu()
     
     
